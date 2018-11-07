@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.quinhai.pos.beans.GoodsInfo" table="GoodsInfo">
+		<id name="Gid" column="Gid">
+		</id>
+		<property name="Gname"></property>
+		<property name="GCid"></property>
+		<property name="Gunit"></property>
+		<property name="Gpin"></property>
+		<property name="Gpout"></property>
+		<property name="Gamount"></property>
+	</class>
+</hibernate-mapping>

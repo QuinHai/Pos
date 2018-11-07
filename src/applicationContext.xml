@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.quinhai.pos.*"></context:component-scan>
+	
+	<!-- 配置数据源 -->
+	<context:property-placeholder location="classpath:db.properties" />
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${db.driverClass}"></property>
+		<property name="jdbcUrl" value="${db.jdbcUrl}"></property>
+		<property name="user" value="${db.user}"></property>
+		<property name="password" value="${db.password}"></property>
+		<property name="maxPoolSize" value="${db.maxPoolSize}"></property>
+		<property name="initialPoolSize" value="${db.initialPoolSize}"></property>
+		<property name="maxIdleTime" value="${db.maxWait}"></property>
+	</bean>
+
+	<!-- hibernate -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>AdminInfo.hbm.xml</value> 
+				<value>GoodsInfo.hbm.xml</value>
+				<value>GoodsClassInfo.hbm.xml</value>
+				<value>ConsumerInfo.hbm.xml</value>
+				<value>ProviderInfo.hbm.xml</value>
+				<value>StockInfo.hbm.xml</value>
+				<value>StockDetail.hbm.xml</value>
+				<value>SellInfo.hbm.xml</value>
+				<value>SellDetail.hbm.xml</value>
+				<value>ProviderBack.hbm.xml</value>
+				<value>ProviderBackDetail.hbm.xml</value>
+				<value>ConsumerBack.hbm.xml</value>
+				<value>ConsumerBackDetail.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>

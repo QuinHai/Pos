@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.quinhai.pos.beans.StockDetail" table="StockDetail">
+	 <id name="SDid"></id>
+	 <property name="Sid"></property>
+	 <property name="Gid"></property>
+	 <property name="SDamount"></property>
+	 <property name="SDprice"></property>
+	 <property name="SDtotalprice"></property>
+	</class>
+</hibernate-mapping>

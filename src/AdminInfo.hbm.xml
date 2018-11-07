@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<!-- javabean与表之间的对应 -->
+	<class name="com.quinhai.pos.beans.AdminInfo" table="AdminInfo">
+		<!-- 主键对应 -->
+		<id name="Aid" column="Aid">
+		</id>
+		<!-- 其他字段 -->
+		<property name="Aname" column="Aname"></property>
+		<property name="Apwd" column="Apwd"></property>
+		<property name="Alevel" column="Alevel"></property>
+	</class>
+</hibernate-mapping>

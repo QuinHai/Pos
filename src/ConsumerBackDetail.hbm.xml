@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.quinhai.pos.beans.ConsumerBackDetail" table="ConsumerBackDetail">
+		<id name="CBDid"></id>
+		<property name="CBid"></property>
+		<property name="Gid"></property>
+		<property name="CBDamount"></property>
+		<property name="CBDprice"></property>
+		<property name="CBDtotalprice"></property>
+	</class>
+</hibernate-mapping>
